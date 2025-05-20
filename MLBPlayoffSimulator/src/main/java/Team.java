@@ -4,13 +4,15 @@ public class Team {
     String location;
     int wins;
     int losses;
+    String league;
     String division;
 
-    public Team(String name, String location, int wins, int losses, String division) {
+    public Team(String name, String location, int wins, int losses, String league, String division) {
         this.name = name;
         this.location = location;
         this.wins = wins;
         this.losses = losses;
+        this.league = league;
         this.division = division;
     }
 
@@ -45,6 +47,14 @@ public class Team {
 
     public int getLosses() {
         return losses;
+    }
+
+    public String getLeague() {
+        return league;
+    }
+
+    public void setLeague(String league) {
+        this.league = league;
     }
 
     public String getDivision() {
