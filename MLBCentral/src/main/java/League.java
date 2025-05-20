@@ -161,10 +161,28 @@ public class League {
         } else {
             MLBFileManager.prepareWriteToFile(teams);
         }
-
+        Utils.pauseApp();
     }
 
-    public void addALoss(String team) {}
+    public void addALoss(String team) {
+        teams = getAllTeams();
+        boolean isTeamFound = false;
+
+        for (Team t : teams) {
+            if (t.getName().equalsIgnoreCase(team)) {
+                t.setLosses(t.losses + 1);
+                isTeamFound = true;
+                System.out.printf("Success. The %s now have %d losses.", t.getName(), t.getLosses());
+                break;
+            }
+        }
+        if(!isTeamFound) {
+            System.out.println("Could not find a team with that name...");
+        } else {
+            MLBFileManager.prepareWriteToFile(teams);
+        }
+        Utils.pauseApp();
+    }
 
     public void updateWinLossRecord(String team) {
 
