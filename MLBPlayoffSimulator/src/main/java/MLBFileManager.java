@@ -35,4 +35,36 @@ public class MLBFileManager {
         }
         return mlb;
     }
+
+    public ArrayList<Team> readAllTeams() {
+        teams = new ArrayList<>();
+
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
+            String input;
+
+            while ((input = bufferedReader.readLine()) != null) {
+                String[] lineParts = input.split("\\|");
+
+                if (!lineParts[0].startsWith("Baseball") || input.isEmpty()) {
+                    continue;
+                }
+                String sport = lineParts[0];
+                String name = lineParts[1];
+                String location = lineParts[2];
+                String league = lineParts[3];
+                String division = lineParts[4];
+                int wins =  Integer.parseInt(lineParts[5]);
+                int losses = Integer.parseInt(lineParts[6]);
+
+                Team newTeam = new Team(sport, name, location, wins, losses);
+                teams.add(newTeam);
+            }
+
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return teams;
+    }
 }

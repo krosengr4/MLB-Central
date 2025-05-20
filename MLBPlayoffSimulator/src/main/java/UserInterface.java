@@ -34,6 +34,8 @@ public class UserInterface {
                 case "4" -> processTeamsByDivision();
                 case "5" -> processTeamsByStanding();
                 case "6" -> processPlayoff();
+                case "7" -> processUpdateTeamRecord();
+                case "8" -> processViewPlayoffPicture();
                 case "00" -> ifContinue = false;
             }
         } while (ifContinue);
