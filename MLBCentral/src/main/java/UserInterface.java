@@ -12,10 +12,12 @@ public class UserInterface {
                                 ------------------PLAY BALL!!!------------------
                         ___________________________________________________________________
                          1 - View All Teams                      2 - View American League Teams
-                         3 - View National League Teams          4 - View Teams by Division       \s
-                         5 - View Team By Standing               6 - Create A Sim Playoff\s
-                         7 - Update A Teams Record               8 - View Current Playoff Picture
-                                                        00 - Exit
+                         3 - View National League Teams          4 - View Teams by Division\s
+                         5 - Update A Teams Record               6 - View Current Playoff Picture\s
+                        
+                                             99 - Create A Sim Playoff
+                        
+                                                   00 - Exit
                         \s""");
 
         return Utils.promptGetUserInput("What Would you like to do?: ").trim();
@@ -33,10 +35,9 @@ public class UserInterface {
                 case "2" -> processAmericanLeagueTeams();
                 case "3" -> processNationalLeagueTeams();
                 case "4" -> displayTeamsByDivision();
-                case "5" -> processTeamsByStanding();
-                case "6" -> processPlayoff();
-                case "7" -> processUpdateTeamRecord();
-                case "8" -> processViewPlayoffPicture();
+                case "5" -> displayUpdateTeamRecord();
+                case "6" -> processViewPlayoffPicture();
+                case "99" -> processPlayoff();
                 case "00" -> ifContinue = false;
                 default -> System.err.println("ERROR! Please enter one of the options you see!");
             }
@@ -49,8 +50,8 @@ public class UserInterface {
         } else {
             teams.sort(Comparator.comparing(Team::calculateWinPercent).reversed());
             for (Team team : teams) {
-                System.out.printf("Team Name: %s | Location: %s | Wins: %d | Losses: %d | Win Percent: %.2f | League: %s | Division: %s\n",
-                        team.getName(), team.getLocation(), team.getWins(), team.getLosses(), team.calculateWinPercent(),
+                System.out.printf("%s %s | %d - %d | Win Percent: %.2f | %s League %s\n",
+                        team.getLocation(), team.getName(), team.getWins(), team.getLosses(), team.calculateWinPercent(),
                         team.getLeague(), team.getDivision());
             }
         }
@@ -82,16 +83,16 @@ public class UserInterface {
     private void displayTeamsByDivision() {
         boolean ifContinue = true;
 
-        while(ifContinue) {
+        while (ifContinue) {
             System.out.println(
                     """
-                                    Which division would you like to see?
-                            1 - AL East                     4 - NL East\s
-                            2 - AL Central                  5 - NL Central
-                            3 - AL West                     6 - NL West
-                                            00 - Go back
-                           \s""");
-            String userChoice = Utils.promptGetUserInput("Enter a number: ");
+                                     Which division would you like to see?
+                             1 - AL East                     4 - NL East\s
+                             2 - AL Central                  5 - NL Central
+                             3 - AL West                     6 - NL West
+                                             00 - Go back
+                            \s""");
+            String userChoice = Utils.promptGetUserInput("Enter a number: ").trim();
 
             if (userChoice.equalsIgnoreCase("00")) {
                 ifContinue = false;
@@ -101,7 +102,7 @@ public class UserInterface {
         }
     }
 
-    private void processTeamsByDivision (String userChoice) {
+    private void processTeamsByDivision(String userChoice) {
         switch (userChoice) {
             case "1":
                 ArrayList<Team> alEastTeams = league.getALEastTeams();
@@ -136,20 +137,42 @@ public class UserInterface {
         }
     }
 
-    private void processTeamsByStanding() {
-        System.out.println("Teams by place");
-    }
+//    private void processTeamsByStanding() {
+//        System.out.println("Teams by place");
+//    }
 
-    private void processPlayoff() {
-        System.out.println("Playoffs!");
-    }
+    private void displayUpdateTeamRecord() {
+        boolean ifContinue = true;
 
-    private void processUpdateTeamRecord() {
-        System.out.println("Update Team Record");
-    }
+        while (ifContinue) {
+            System.out.println(
+                    """
+                                                 \s___OPTIONS___
+                            ____________________________________________________________
+                            1 - Add A Win To A Team             2 - Add A Loss To A Team
+                            3 - Update Full Win/Loss Record     00 - Go back
+                            """);
 
-    private void processViewPlayoffPicture() {
-        System.out.println("Playoff Picture");
-    }
+        String userChoice = Utils.promptGetUserInput("Enter a number: ").trim();
 
+        if (userChoice.equalsIgnoreCase("00")) {
+            ifContinue = false;
+        } else {
+            processUpdateTeamRecord(userChoice);
+        }
+    }
+}
+
+private void processUpdateTeamRecord(String userChoice) {
+        String updateTeam = Utils.promptGetUserInput("Which team would you like to update?: ");
+
+}
+
+private void processViewPlayoffPicture() {
+    System.out.println("Playoff Picture");
+}
+
+private void processPlayoff() {
+    System.out.println("Playoffs!");
+}
 }
