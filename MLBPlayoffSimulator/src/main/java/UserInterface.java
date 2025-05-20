@@ -86,9 +86,40 @@ public class UserInterface {
                             """);
             String userChoice = Utils.promptGetUserInput("Enter a number: ");
 
-            switch (userChoice) {
-                case "1":
+            if (userChoice.equalsIgnoreCase("00")) {
+                ifContinue = false;
+            } else {
+                processTeamsByDivision(userChoice);
             }
+        }
+    }
+
+    private void processTeamsByDivision (String userChoice) {
+        switch (userChoice) {
+            case "1":
+                ArrayList<Team> alEastTeams = league.getALEastTeams();
+                displayTeams(alEastTeams);
+                break;
+            case "2":
+                ArrayList<Team> alCentralTeams = league.getALCentralTeams();
+                displayTeams(alCentralTeams);
+                break;
+            case "3":
+                ArrayList<Team> alWestTeams = league.getALWestTeams();
+                displayTeams(alWestTeams);
+                break;
+            case "4":
+                ArrayList<Team> nlEastTeams = league.getNLEastTeams();
+                displayTeams(nlEastTeams);
+                break;
+            case "5":
+                ArrayList<Team> nlCentralTeams = league.getNLCentralTeams();
+                displayTeams(nlCentralTeams);
+                break;
+            case "6":
+                ArrayList<Team> nlWestTeams = league.getNLWestTeams();
+                displayTeams(nlWestTeams);
+                break;
         }
     }
 
