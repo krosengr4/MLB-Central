@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class UserInterface {
 
+    League league;
 
     public String displayMainMenu() {
         System.out.println(
@@ -9,9 +10,10 @@ public class UserInterface {
                                                \s
                                 ------------------MAIN MENU------------------
                         ___________________________________________________________________
-                         1 - View All Teams                      4 - View Teams by Division
-                         2 - View American League Teams          5 - View Teams by Standing       \s
-                         3 - View National League Teams          6 - Create A Playoff\s
+                         1 - View All Teams                      2 - View American League Teams
+                         3 - View National League Teams          4 - View Teams by Division       \s
+                         5 - View Team By Standing               6 - Create A Sim Playoff\s
+                         7 - Update A Teams Record               8 - View Current Playoff Picture
                                                         00 - Exit
                         \s""");
 
@@ -23,6 +25,7 @@ public class UserInterface {
 
         do {
             String userMenuChoice = displayMainMenu();
+            initLeague();
 
             switch (userMenuChoice) {
                 case "1" -> processAllTeams();
@@ -32,7 +35,6 @@ public class UserInterface {
                 case "5" -> processTeamsByStanding();
                 case "6" -> processPlayoff();
                 case "00" -> ifContinue = false;
-
             }
         } while (ifContinue);
     }
@@ -48,6 +50,11 @@ public class UserInterface {
             }
         }
         Utils.pauseApp();
+    }
+
+    private void initLeague() {
+        MLBFileManager mlbfm = new MLBFileManager();
+        this.league = mlbfm.getLeague();
     }
 
     private void processAllTeams() {
@@ -72,6 +79,14 @@ public class UserInterface {
 
     private void processPlayoff() {
         System.out.println("Playoffs!");
+    }
+
+    private void processUpdateTeamRecord() {
+        System.out.println("Update Team Record");
+    }
+
+    private void processViewPlayoffPicture() {
+        System.out.println("Playoff Picture");
     }
 
 }
