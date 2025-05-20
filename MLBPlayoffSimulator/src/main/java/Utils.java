@@ -29,6 +29,11 @@ public class Utils {
     public static String thumbsUp = "\uD83D\uDC4D";
     public static String redHeart = "\u2764\uFE0F";
     public static String cowboy = "\uD83E\uDD20";
+    public static String baseball = "⚾";
+    public static String football = "\uD83C\uDFC8";
+    public static String basketball = "\uD83C\uDFC0";
+    public static String soccerball = "⚽";
+    public static String volleyball = "\uD83C\uDFD0";
     //endregion
 
     //region prints out designed lines
