@@ -8,6 +8,8 @@ public class Main {
         UserInterface userInterface = new UserInterface();
         userInterface.processMainMenu();
 
+        System.out.println(Utils.baseball + "Thank you for using the MLB Playoff Simulator Application!" + Utils.baseball);
+        System.out.println(Utils.baseball + "Tip your umpires and we'll see you soon!" +Utils.baseball);
     }
 
 }

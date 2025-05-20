@@ -8,7 +8,7 @@ public class UserInterface {
         System.out.println(
                 """
                                                \s
-                                ------------------MAIN MENU------------------
+                                ------------------PLAY BALL!!!------------------
                         ___________________________________________________________________
                          1 - View All Teams                      2 - View American League Teams
                          3 - View National League Teams          4 - View Teams by Division       \s
