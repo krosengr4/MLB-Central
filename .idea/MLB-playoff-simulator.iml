@@ -6,6 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/MLBPlayoffSimulator/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MLBPlayoffSimulator/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/MLBPlayoffSimulator/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/MLBCentral/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MLBCentral/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/MLBCentral/src/test/java" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
