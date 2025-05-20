@@ -72,7 +72,9 @@ public class UserInterface {
     }
 
     private void processNationalLeagueTeams() {
-        System.out.println("National League Teams");
+        ArrayList<Team> nationalLeagueTeams = league.getNLTeams();
+        System.out.println("\t\t\t\t-----National League-----");
+        displayTeams(nationalLeagueTeams);
     }
 
     private void displayTeamsByDivision() {

@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class League {
@@ -56,6 +57,18 @@ public class League {
             }
         }
         return americanLeagueTeams;
+    }
+
+    public ArrayList<Team> getNLTeams() {
+        teams = getAllTeams();
+        ArrayList<Team> nationalLeagueTeams = new ArrayList<>();
+
+        for (Team t : teams) {
+            if(t.getLeague().equalsIgnoreCase("National")) {
+                nationalLeagueTeams.add(t);
+            }
+        }
+        return nationalLeagueTeams;
     }
 
     public ArrayList<Team> getALEastTeams() {
