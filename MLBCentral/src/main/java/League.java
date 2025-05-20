@@ -144,13 +144,13 @@ public class League {
         return nlWestTeams;
     }
 
-    public void addAWin(String team) {
+    public void addAWin(String team, int numberOfTWins) {
         teams = getAllTeams();
         boolean isTeamFound = false;
 
         for (Team t : teams) {
             if (t.getName().equalsIgnoreCase(team)) {
-                t.setWins(t.wins + 1);
+                t.setWins(t.wins + numberOfTWins);
                 isTeamFound = true;
                 System.out.printf("Success! The %s now have %d wins!", t.getName(), t.getWins());
                 break;
@@ -164,13 +164,13 @@ public class League {
         Utils.pauseApp();
     }
 
-    public void addALoss(String team) {
+    public void addALoss(String team, int numberOfLosses) {
         teams = getAllTeams();
         boolean isTeamFound = false;
 
         for (Team t : teams) {
             if (t.getName().equalsIgnoreCase(team)) {
-                t.setLosses(t.losses + 1);
+                t.setLosses(t.losses + numberOfLosses);
                 isTeamFound = true;
                 System.out.printf("Success. The %s now have %d losses.", t.getName(), t.getLosses());
                 break;

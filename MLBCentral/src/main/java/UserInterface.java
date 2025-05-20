@@ -163,10 +163,19 @@ public class UserInterface {
         String updateTeam = Utils.promptGetUserInput("Which team would you like to update?: ").trim();
 
         switch (userChoice) {
-            case "1" -> league.addAWin(updateTeam);
-            case "2" -> league.addALoss(updateTeam);
-            case "3" -> league.updateWinLossRecord(updateTeam);
-            default -> System.out.println("ERROR! Please enter a number 1 - 3 or 00");
+            case "1":
+                int numberOfWins = Utils.messageAndResponseInt("How many wins do you want to add?: ");
+                league.addAWin(updateTeam, numberOfWins);
+                break;
+            case "2":
+                int numberOfLosses = Utils.messageAndResponseInt("How many losses do you want to add?: ");
+                league.addALoss(updateTeam, numberOfLosses);
+                break;
+            case "3":
+                league.updateWinLossRecord(updateTeam);
+                break;
+            default:
+                System.out.println("ERROR! Please enter a number 1 - 3 or 00");
         }
     }
 
