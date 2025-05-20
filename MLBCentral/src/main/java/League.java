@@ -3,14 +3,17 @@ import java.util.ArrayList;
 
 public class League {
 
+    //League attributes
     String leagueName;
     String sport;
     int gamesPerSeason;
     ArrayList<Team> teams;
 
+    //default constructor
     public League() {
     }
 
+    //Overloaded constructor
     public League(String leagueName, String sport, int gamesPerSeason) {
         this.leagueName = leagueName;
         this.sport = sport;
@@ -43,11 +46,13 @@ public class League {
     }
     //endregion
 
+    //Gets all teams and returns them in a List
     public ArrayList<Team> getAllTeams() {
         teams = MLBFileManager.readAllTeams();
         return teams;
     }
 
+    //Gets all American League teams and returns them in a list
     public ArrayList<Team> getALTeams() {
         teams = getAllTeams();
         ArrayList<Team> americanLeagueTeams = new ArrayList<>();
@@ -60,6 +65,7 @@ public class League {
         return americanLeagueTeams;
     }
 
+    //Gets all National League teams and returns them in a list
     public ArrayList<Team> getNLTeams() {
         teams = getAllTeams();
         ArrayList<Team> nationalLeagueTeams = new ArrayList<>();
@@ -72,6 +78,7 @@ public class League {
         return nationalLeagueTeams;
     }
 
+    //Gets all teams in American League East division. Returns them in a list
     public ArrayList<Team> getALEastTeams() {
         teams = getAllTeams();
         ArrayList<Team> alEastTeams = new ArrayList<>();
@@ -84,6 +91,7 @@ public class League {
         return alEastTeams;
     }
 
+    //Gets all teams in American League Central division. Returns them in a list
     public ArrayList<Team> getALCentralTeams() {
         teams = getAllTeams();
         ArrayList<Team> alCentralTeams = new ArrayList<>();
@@ -96,6 +104,7 @@ public class League {
         return alCentralTeams;
     }
 
+    //Gets all teams in American League West division. Returns them in a list
     public ArrayList<Team> getALWestTeams() {
         teams = getAllTeams();
         ArrayList<Team> alWestTeams = new ArrayList<>();
@@ -108,6 +117,7 @@ public class League {
         return alWestTeams;
     }
 
+    //Gets all teams in National League east division. Returns them in a list
     public ArrayList<Team> getNLEastTeams() {
         teams = getAllTeams();
         ArrayList<Team> nlEastTeams = new ArrayList<>();
@@ -120,6 +130,7 @@ public class League {
         return nlEastTeams;
     }
 
+    //Gets all teams in National League Central division. Returns them in a list
     public ArrayList<Team> getNLCentralTeams() {
         teams = getAllTeams();
         ArrayList<Team> nlCentralTeams = new ArrayList<>();
@@ -132,6 +143,7 @@ public class League {
         return nlCentralTeams;
     }
 
+    //Gets all teams in National League West division. Returns them in a list
     public ArrayList<Team> getNLWestTeams() {
         teams = getAllTeams();
         ArrayList<Team> nlWestTeams = new ArrayList<>();
@@ -144,6 +156,7 @@ public class League {
         return nlWestTeams;
     }
 
+    //Adds wins to team of users choice and sends to rewrite csv file with update
     public void addAWin(String team, int numberOfTWins) {
         teams = getAllTeams();
         boolean isTeamFound = false;
@@ -164,6 +177,7 @@ public class League {
         Utils.pauseApp();
     }
 
+    //Adds losses to team of users choice and sends to rewrite csv file with update
     public void addALoss(String team, int numberOfLosses) {
         teams = getAllTeams();
         boolean isTeamFound = false;
@@ -184,6 +198,7 @@ public class League {
         Utils.pauseApp();
     }
 
+    //Updates the win/loss record of a team of users choice, sends to rewrite the csv file with update
     public void updateWinLossRecord(String team) {
 
         int newWins = Utils.messageAndResponseInt("Enter the updated number of wins: ");

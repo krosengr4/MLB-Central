@@ -5,6 +5,7 @@ public class UserInterface {
 
     League league;
 
+    //displays the main menu with user options
     public String displayMainMenu() {
         System.out.println(
                 """
@@ -23,6 +24,7 @@ public class UserInterface {
         return Utils.promptGetUserInput("What Would you like to do?: ").trim();
     }
 
+    //process what the user selects from the main menu
     public void processMainMenu() {
         boolean ifContinue = true;
 
@@ -44,6 +46,7 @@ public class UserInterface {
         } while (ifContinue);
     }
 
+    //takes in a List and displays it to the user
     private void displayTeams(ArrayList<Team> teams) {
         if (teams.isEmpty()) {
             System.out.println("There are no teams to display...");
@@ -58,28 +61,33 @@ public class UserInterface {
         Utils.pauseApp();
     }
 
+    //initializes file manager
     private void initLeague() {
         MLBFileManager mlbfm = new MLBFileManager();
         this.league = mlbfm.getLeague();
     }
 
+    //Gets list of all teams and sends it to displayTeams
     private void processAllTeams() {
         ArrayList<Team> allTeams = league.getAllTeams();
         displayTeams(allTeams);
     }
 
+    //Gets list of all American League team and sends it to displayTeams
     private void processAmericanLeagueTeams() {
         ArrayList<Team> americanLeagueTeams = league.getALTeams();
         System.out.println("\t\t\t\t-----American League-----");
         displayTeams(americanLeagueTeams);
     }
 
+    //Gets list of all National League teams and sends it to displayTeams
     private void processNationalLeagueTeams() {
         ArrayList<Team> nationalLeagueTeams = league.getNLTeams();
         System.out.println("\t\t\t\t-----National League-----");
         displayTeams(nationalLeagueTeams);
     }
 
+    //Displays options for what division a user wants to see
     private void displayTeamsByDivision() {
         boolean ifContinue = true;
 
@@ -102,6 +110,7 @@ public class UserInterface {
         }
     }
 
+    //Processes user selection for what division to show
     private void processTeamsByDivision(String userChoice) {
         switch (userChoice) {
             case "1":
@@ -137,6 +146,7 @@ public class UserInterface {
         }
     }
 
+    //Displays options for how a user wants to update a teams record
     private void displayUpdateTeamRecord() {
         boolean ifContinue = true;
 
@@ -159,6 +169,7 @@ public class UserInterface {
         }
     }
 
+    //Processes the choice for how a user wants to update a teams record
     private void processUpdateTeamRecord(String userChoice) {
         String updateTeam = Utils.promptGetUserInput("Which team would you like to update?: ").trim();
 
@@ -179,15 +190,14 @@ public class UserInterface {
         }
     }
 
+    //
     private void processViewPlayoffPicture() {
         System.out.println("Playoff Picture");
     }
 
+    //
     private void processPlayoff() {
         System.out.println("Playoffs!");
     }
 
-    //    private void processTeamsByStanding() {
-//        System.out.println("Teams by place");
-//    }
 }
