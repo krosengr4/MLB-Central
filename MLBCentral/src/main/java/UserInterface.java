@@ -162,6 +162,13 @@ public class UserInterface {
     private void processUpdateTeamRecord(String userChoice) {
         String updateTeam = Utils.promptGetUserInput("Which team would you like to update?: ");
 
+        switch (userChoice) {
+            case "1" -> league.addAWin(updateTeam);
+            case "2" -> league.addALoss(updateTeam);
+            case "3" -> league.updateWinLossRecord(updateTeam);
+            default -> System.out.println("ERROR! Please enter a number 1 - 3 or 00");
+        }
+
     }
 
     private void processViewPlayoffPicture() {

@@ -8,7 +8,8 @@ public class League {
     int gamesPerSeason;
     ArrayList<Team> teams;
 
-    public League() {}
+    public League() {
+    }
 
     public League(String leagueName, String sport, int gamesPerSeason) {
         this.leagueName = leagueName;
@@ -64,7 +65,7 @@ public class League {
         ArrayList<Team> nationalLeagueTeams = new ArrayList<>();
 
         for (Team t : teams) {
-            if(t.getLeague().equalsIgnoreCase("National")) {
+            if (t.getLeague().equalsIgnoreCase("National")) {
                 nationalLeagueTeams.add(t);
             }
         }
@@ -124,7 +125,7 @@ public class League {
         ArrayList<Team> nlCentralTeams = new ArrayList<>();
 
         for (Team t : teams) {
-            if(t.getLeague().equalsIgnoreCase("National") && t.getDivision().equalsIgnoreCase("Central")) {
+            if (t.getLeague().equalsIgnoreCase("National") && t.getDivision().equalsIgnoreCase("Central")) {
                 nlCentralTeams.add(t);
             }
         }
@@ -143,6 +144,20 @@ public class League {
         return nlWestTeams;
     }
 
+    public void addAWin(String team) {}
+
+    public void addALoss(String team) {}
+
+    public void updateWinLossRecord(String team) {
+
+        teams = getAllTeams();
+
+        for (Team t : teams) {
+
+        }
+
+
+    }
 
 
 }
