@@ -8,12 +8,14 @@ public class Team {
     String league;
     String division;
 
-    public Team(String sport, String name, String location, int wins, int losses) {
+    public Team(String sport, String name, String location, int wins, int losses, String league, String division) {
         this.sport = sport;
         this.name = name;
         this.location = location;
         this.wins = wins;
         this.losses = losses;
+        this.league = league;
+        this.division = division;
     }
 
     //region getters and setters

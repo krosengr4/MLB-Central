@@ -42,7 +42,8 @@ public class League {
     //endregion
 
     public ArrayList<Team> getAllTeams() {
-
+        teams = MLBFileManager.readAllTeams();
+        return teams;
     }
 
 

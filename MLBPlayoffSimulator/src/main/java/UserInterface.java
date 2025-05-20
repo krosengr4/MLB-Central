@@ -46,7 +46,7 @@ public class UserInterface {
             System.out.println("There are no teams to display...");
         } else {
             for (Team team : teams) {
-                System.out.printf("Team Name: %s | Location: %s | Wins: %d | Losses: %d | Win Percent: %f | League: %s | Division: %s",
+                System.out.printf("Team Name: %s | Location: %s | Wins: %d | Losses: %d | Win Percent: %.2f | League: %s | Division: %s\n",
                         team.getName(), team.getLocation(), team.getWins(), team.getLosses(), team.calculateWinPercent(),
                         team.getLeague(), team.getDivision());
             }
@@ -60,7 +60,8 @@ public class UserInterface {
     }
 
     private void processAllTeams() {
-        System.out.println("All Teams");
+        ArrayList<Team> allTeams = league.getAllTeams();
+        displayTeams(allTeams);
     }
 
     private void processALTeams() {

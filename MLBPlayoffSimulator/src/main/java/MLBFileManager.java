@@ -36,7 +36,7 @@ public class MLBFileManager {
         return mlb;
     }
 
-    public ArrayList<Team> readAllTeams() {
+    public static ArrayList<Team> readAllTeams() {
         teams = new ArrayList<>();
 
         try {
@@ -57,7 +57,7 @@ public class MLBFileManager {
                 int wins =  Integer.parseInt(lineParts[5]);
                 int losses = Integer.parseInt(lineParts[6]);
 
-                Team newTeam = new Team(sport, name, location, wins, losses);
+                Team newTeam = new Team(sport, name, location, wins, losses, league, division);
                 teams.add(newTeam);
             }
 
