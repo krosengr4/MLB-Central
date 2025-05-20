@@ -29,9 +29,9 @@ public class UserInterface {
 
             switch (userMenuChoice) {
                 case "1" -> processAllTeams();
-                case "2" -> processALTeams();
-                case "3" -> processNLTeams();
-                case "4" -> processTeamsByDivision();
+                case "2" -> processAmericanLeagueTeams();
+                case "3" -> processNationalLeagueTeams();
+                case "4" -> displayTeamsByDivision();
                 case "5" -> processTeamsByStanding();
                 case "6" -> processPlayoff();
                 case "7" -> processUpdateTeamRecord();
@@ -64,16 +64,32 @@ public class UserInterface {
         displayTeams(allTeams);
     }
 
-    private void processALTeams() {
+    private void processAmericanLeagueTeams() {
         System.out.println("American League Teams");
     }
 
-    private void processNLTeams() {
+    private void processNationalLeagueTeams() {
         System.out.println("National League Teams");
     }
 
-    private void processTeamsByDivision() {
-        System.out.println("Teams by division");
+    private void displayTeamsByDivision() {
+        boolean ifContinue = true;
+
+        while(ifContinue) {
+            System.out.println(
+                    """
+                                    Which division would you like to see?
+                            1 - AL East                     4 - NL East 
+                            2 - AL Central                  5 - NL Central
+                            3 - AL West                     6 - NL West
+                                            00 - Go back
+                            """);
+            String userChoice = Utils.promptGetUserInput("Enter a number: ");
+
+            switch (userChoice) {
+                case "1":
+            }
+        }
     }
 
     private void processTeamsByStanding() {
