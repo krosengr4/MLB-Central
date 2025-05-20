@@ -37,6 +37,7 @@ public class UserInterface {
                 case "7" -> processUpdateTeamRecord();
                 case "8" -> processViewPlayoffPicture();
                 case "00" -> ifContinue = false;
+                default -> System.err.println("ERROR! Please enter one of the options you see!");
             }
         } while (ifContinue);
     }
@@ -65,7 +66,9 @@ public class UserInterface {
     }
 
     private void processAmericanLeagueTeams() {
-        System.out.println("American League Teams");
+        ArrayList<Team> americanLeagueTeams = league.getALTeams();
+        System.out.println("\t\t\t\t-----American League-----");
+        displayTeams(americanLeagueTeams);
     }
 
     private void processNationalLeagueTeams() {
@@ -79,11 +82,11 @@ public class UserInterface {
             System.out.println(
                     """
                                     Which division would you like to see?
-                            1 - AL East                     4 - NL East 
+                            1 - AL East                     4 - NL East\s
                             2 - AL Central                  5 - NL Central
                             3 - AL West                     6 - NL West
                                             00 - Go back
-                            """);
+                           \s""");
             String userChoice = Utils.promptGetUserInput("Enter a number: ");
 
             if (userChoice.equalsIgnoreCase("00")) {
@@ -98,26 +101,32 @@ public class UserInterface {
         switch (userChoice) {
             case "1":
                 ArrayList<Team> alEastTeams = league.getALEastTeams();
+                System.out.println("\t\t\t\t---American League East---");
                 displayTeams(alEastTeams);
                 break;
             case "2":
                 ArrayList<Team> alCentralTeams = league.getALCentralTeams();
+                System.out.println("\t\t\t\t---American League Central---");
                 displayTeams(alCentralTeams);
                 break;
             case "3":
                 ArrayList<Team> alWestTeams = league.getALWestTeams();
+                System.out.println("\t\t\t\t---American League West---");
                 displayTeams(alWestTeams);
                 break;
             case "4":
                 ArrayList<Team> nlEastTeams = league.getNLEastTeams();
+                System.out.println("\t\t\t\t---National League East---");
                 displayTeams(nlEastTeams);
                 break;
             case "5":
                 ArrayList<Team> nlCentralTeams = league.getNLCentralTeams();
+                System.out.println("\t\t\t\t---National League Central---");
                 displayTeams(nlCentralTeams);
                 break;
             case "6":
                 ArrayList<Team> nlWestTeams = league.getNLWestTeams();
+                System.out.println("\t\t\t\t---National League West---");
                 displayTeams(nlWestTeams);
                 break;
         }

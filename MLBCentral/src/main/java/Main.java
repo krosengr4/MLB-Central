@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("\n\t\t-----WELCOME TO MLB PLAYOFF SIMULATOR-----");
+        System.out.println("\n\t\t-----WELCOME TO MLB CENTRAL-----");
         Utils.printDivider(Utils.baseball, 28);
 
         UserInterface userInterface = new UserInterface();

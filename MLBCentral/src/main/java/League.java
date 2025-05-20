@@ -46,6 +46,18 @@ public class League {
         return teams;
     }
 
+    public ArrayList<Team> getALTeams() {
+        teams = getAllTeams();
+        ArrayList<Team> americanLeagueTeams = new ArrayList<>();
+
+        for (Team t : teams) {
+            if (t.getLeague().equalsIgnoreCase("American")) {
+                americanLeagueTeams.add(t);
+            }
+        }
+        return americanLeagueTeams;
+    }
+
     public ArrayList<Team> getALEastTeams() {
         teams = getAllTeams();
         ArrayList<Team> alEastTeams = new ArrayList<>();

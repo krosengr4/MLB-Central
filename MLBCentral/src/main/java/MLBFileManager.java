@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MLBFileManager {
 
-    public static String filePath = "MLBPlayoffSimulator/src/main/resources/Teams.csv";
+    public static String filePath = "MLBCentral/src/main/resources/Teams.csv";
     public static ArrayList<Team> teams;
 
     public League getLeague() {
