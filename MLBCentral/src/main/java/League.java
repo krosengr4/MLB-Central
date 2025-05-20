@@ -150,14 +150,28 @@ public class League {
 
     public void updateWinLossRecord(String team) {
 
+        int newWins = Utils.messageAndResponseInt("Enter the updated number of wins: ");
+        int newLosses = Utils.messageAndResponseInt("Enter the updated number of losses: ");
+
         teams = getAllTeams();
+        boolean isTeamFound = false;
 
         for (Team t : teams) {
+            if (t.getName().equalsIgnoreCase(team)) {
+                t.setWins(newWins);
+                t.setLosses(newLosses);
+                isTeamFound = true;
 
+                System.out.printf("\nSuccess! The %s record has been updated! New Record: %d - %d\n", t.getName(), t.getWins(), t.getLosses());
+                break;
+            }
+        }
+        if(!isTeamFound) {
+            System.out.println("Could not find a team with that name...");
+        } else {
+            MLBFileManager.prepareWriteToFile(teams);
         }
 
-
+        Utils.pauseApp();
     }
-
-
 }
