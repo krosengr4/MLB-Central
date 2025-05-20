@@ -144,7 +144,25 @@ public class League {
         return nlWestTeams;
     }
 
-    public void addAWin(String team) {}
+    public void addAWin(String team) {
+        teams = getAllTeams();
+        boolean isTeamFound = false;
+
+        for (Team t : teams) {
+            if (t.getName().equalsIgnoreCase(team)) {
+                t.setWins(t.wins + 1);
+                isTeamFound = true;
+                System.out.printf("Success! The %s now have %d wins!", t.getName(), t.getWins());
+                break;
+            }
+        }
+        if (!isTeamFound) {
+            System.out.println("Could not find a team with that name...");
+        } else {
+            MLBFileManager.prepareWriteToFile(teams);
+        }
+
+    }
 
     public void addALoss(String team) {}
 
