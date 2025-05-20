@@ -137,42 +137,42 @@ public class UserInterface {
         }
     }
 
-//    private void processTeamsByStanding() {
-//        System.out.println("Teams by place");
-//    }
-
     private void displayUpdateTeamRecord() {
         boolean ifContinue = true;
 
         while (ifContinue) {
             System.out.println(
                     """
-                                                 \s___OPTIONS___
+                                                  ___OPTIONS___
                             ____________________________________________________________
                             1 - Add A Win To A Team             2 - Add A Loss To A Team
                             3 - Update Full Win/Loss Record     00 - Go back
                             """);
 
-        String userChoice = Utils.promptGetUserInput("Enter a number: ").trim();
+            String userChoice = Utils.promptGetUserInput("Enter a number: ").trim();
 
-        if (userChoice.equalsIgnoreCase("00")) {
-            ifContinue = false;
-        } else {
-            processUpdateTeamRecord(userChoice);
+            if (userChoice.equalsIgnoreCase("00")) {
+                ifContinue = false;
+            } else {
+                processUpdateTeamRecord(userChoice);
+            }
         }
     }
-}
 
-private void processUpdateTeamRecord(String userChoice) {
+    private void processUpdateTeamRecord(String userChoice) {
         String updateTeam = Utils.promptGetUserInput("Which team would you like to update?: ");
 
-}
+    }
 
-private void processViewPlayoffPicture() {
-    System.out.println("Playoff Picture");
-}
+    private void processViewPlayoffPicture() {
+        System.out.println("Playoff Picture");
+    }
 
-private void processPlayoff() {
-    System.out.println("Playoffs!");
-}
+    private void processPlayoff() {
+        System.out.println("Playoffs!");
+    }
+
+    //    private void processTeamsByStanding() {
+//        System.out.println("Teams by place");
+//    }
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/MLB-playoff-simulator.iml" filepath="$PROJECT_DIR$/.idea/MLB-playoff-simulator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MLB-Central.iml" filepath="$PROJECT_DIR$/.idea/MLB-Central.iml" />
     </modules>
   </component>
 </project>
