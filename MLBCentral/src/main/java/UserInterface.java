@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class UserInterface {
 
@@ -46,6 +47,7 @@ public class UserInterface {
         if (teams.isEmpty()) {
             System.out.println("There are no teams to display...");
         } else {
+            teams.sort(Comparator.comparing(Team::calculateWinPercent).reversed());
             for (Team team : teams) {
                 System.out.printf("Team Name: %s | Location: %s | Wins: %d | Losses: %d | Win Percent: %.2f | League: %s | Division: %s\n",
                         team.getName(), team.getLocation(), team.getWins(), team.getLosses(), team.calculateWinPercent(),
