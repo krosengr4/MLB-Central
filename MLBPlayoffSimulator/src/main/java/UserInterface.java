@@ -10,7 +10,7 @@ public class UserInterface {
                                 ------------------MAIN MENU------------------
                         ___________________________________________________________________
                          1 - View All Teams                      4 - View Teams by Division
-                         2 - View American League Teams          5 - View Teams by Place       \s
+                         2 - View American League Teams          5 - View Teams by Standing       \s
                          3 - View National League Teams          6 - Create A Playoff\s
                                                         00 - Exit
                         \s""");
@@ -25,6 +25,13 @@ public class UserInterface {
             String userMenuChoice = displayMainMenu();
 
             switch (userMenuChoice) {
+                case "1" -> processAllTeams();
+                case "2" -> processALTeams();
+                case "3" -> processNLTeams();
+                case "4" -> processTeamsByDivision();
+                case "5" -> processTeamsByStanding();
+                case "6" -> processPlayoff();
+                case "00" -> ifContinue = false;
 
             }
         } while (ifContinue);
@@ -41,6 +48,30 @@ public class UserInterface {
             }
         }
         Utils.pauseApp();
+    }
+
+    private void processAllTeams() {
+        System.out.println("All Teams");
+    }
+
+    private void processALTeams() {
+        System.out.println("American League Teams");
+    }
+
+    private void processNLTeams() {
+        System.out.println("National League Teams");
+    }
+
+    private void processTeamsByDivision() {
+        System.out.println("Teams by division");
+    }
+
+    private void processTeamsByStanding() {
+        System.out.println("Teams by place");
+    }
+
+    private void processPlayoff() {
+        System.out.println("Playoffs!");
     }
 
 }
