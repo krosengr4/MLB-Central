@@ -192,7 +192,7 @@ public class UserInterface {
 
     //
     private void processViewPlayoffPicture() {
-        System.out.println("Playoff Picture");
+        System.out.println("These Teams will Make the playoffs: ");
     }
 
     //

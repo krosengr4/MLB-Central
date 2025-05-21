@@ -225,4 +225,6 @@ public class League {
 
         Utils.pauseApp();
     }
+
+    //Gets all teams who are going to make the playoffs
 }

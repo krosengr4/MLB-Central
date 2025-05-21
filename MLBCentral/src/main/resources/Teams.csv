@@ -1,38 +1,38 @@
 MLB|Baseball|182
 TEAM|LOCATION|LEAGUE|DIVISION|WINS|LOSSES
 AL|EAST
-Baseball|Yankees|New York|American|East|27|19
-Baseball|Red Sox|Boston|American|East|24|25
-Baseball|Blue Jays|Toronto|American|East|22|24
-Baseball|Rays|Tampa Bay|American|East|21|26
-Baseball|Orioles|Baltimore|American|East|15|31
+Baseball|Yankees|New York|American|East|28|19
+Baseball|Red Sox|Boston|American|East|25|25
+Baseball|Blue Jays|Toronto|American|East|23|24
+Baseball|Rays|Tampa Bay|American|East|22|26
+Baseball|Orioles|Baltimore|American|East|15|32
 AL|CENTRAL
-Baseball|Tigers|Detroit|American|Central|31|17
+Baseball|Tigers|Detroit|American|Central|32|17
 Baseball|Twins|Minnesota|American|Central|26|21
-Baseball|Royals|Kansas City|American|Central|27|22
+Baseball|Royals|Kansas City|American|Central|27|23
 Baseball|Guardians|Cleveland|American|Central|25|21
-Baseball|White Sox|Chicago|American|Central|14|34
+Baseball|White Sox|Chicago|American|Central|15|34
 AL|WEST
-Baseball|Mariners|Seattle|American|West|27|19
-Baseball|Astros|Houston|American|West|25|22
-Baseball|Rangers|Texas|American|West|25|23
-Baseball|Athletics|Sacramento|American|West|22|26
-Baseball|Angels|Los Angeles|American|West|21|25
+Baseball|Mariners|Seattle|American|West|27|20
+Baseball|Astros|Houston|American|West|25|23
+Baseball|Rangers|Texas|American|West|25|24
+Baseball|Athletics|Sacramento|American|West|22|27
+Baseball|Angels|Los Angeles|American|West|22|25
 NL|EAST
-Baseball|Phillies|Philadelphia|National|East|29|18
-Baseball|Mets|New York|National|East|29|19
-Baseball|Braves|Atlanta|National|East|24|23
-Baseball|Nationals|Washington|National|East|21|27
-Baseball|Marlins|Miami|National|East|19|27
+Baseball|Phillies|Philadelphia|National|East|30|18
+Baseball|Mets|New York|National|East|29|20
+Baseball|Braves|Atlanta|National|East|24|24
+Baseball|Nationals|Washington|National|East|22|27
+Baseball|Marlins|Miami|National|East|19|28
 NL|CENTRAL
-Baseball|Cubs|Chicago|National|Central|28|20
-Baseball|Cardinals|St.Louis|National|Central|27|21
-Baseball|Reds|Cincinnati|National|Central|25|24
-Baseball|Brewers|Milwaukee|National|Central|23|25
-Baseball|Pirates|Pittsburgh|National|Central|15|33
+Baseball|Cubs|Chicago|National|Central|29|20
+Baseball|Cardinals|St.Louis|National|Central|27|22
+Baseball|Reds|Cincinnati|National|Central|25|25
+Baseball|Brewers|Milwaukee|National|Central|24|25
+Baseball|Pirates|Pittsburgh|National|Central|16|33
 NL|WEST
-Baseball|Dodgers|Los Angeles|National|West|29|19
-Baseball|Padres|San Diego|National|West|27|18
-Baseball|Giants|San Fransisco|National|West|28|20
-Baseball|Diamondbacks|Arizona|National|West|26|22
-Baseball|Rockies|Colorado|National|West|8|39
+Baseball|Dodgers|Los Angeles|National|West|30|19
+Baseball|Padres|San Diego|National|West|27|19
+Baseball|Giants|San Fransisco|National|West|29|20
+Baseball|Diamondbacks|Arizona|National|West|26|23
+Baseball|Rockies|Colorado|National|West|8|40
