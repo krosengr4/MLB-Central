@@ -14,11 +14,9 @@ public class UserInterface {
                         ___________________________________________________________________
                          1 - View All Teams                      2 - View American League Teams
                          3 - View National League Teams          4 - View Teams by Division\s
-                         5 - Update A Teams Record               6 - View Current Playoff Picture\s
-                        
-                                             99 - Create A Sim Playoff
-                        
-                                                   00 - Exit
+                         5 - Update A Teams Record               6 - Enter a Final Game Score\s
+                         7 - View Current Playoff Picture        8 - Create A Simulated Playoff\s
+                                                     00 - Exit
                         \s""");
 
         return Utils.promptGetUserInput("What Would you like to do?: ").trim();
@@ -38,8 +36,9 @@ public class UserInterface {
                 case "3" -> processNationalLeagueTeams();
                 case "4" -> displayTeamsByDivision();
                 case "5" -> displayUpdateTeamRecord();
-                case "6" -> processViewPlayoffPicture();
-                case "99" -> processPlayoff();
+                case "6" -> processEnterGameScore();
+                case "7" -> processViewPlayoffPicture();
+                case "8" -> processPlayoff();
                 case "00" -> ifContinue = false;
                 default -> System.err.println("ERROR! Please enter one of the options you see!");
             }
@@ -188,6 +187,15 @@ public class UserInterface {
             default:
                 System.out.println("ERROR! Please enter a number 1 - 3 or 00");
         }
+    }
+
+    private void processEnterGameScore() {
+        String awayTeam = Utils.promptGetUserInput("Please enter the away team name: ").trim();
+        String homeTeam = Utils.promptGetUserInput("Please enter the home team name: ").trim();
+        int awayScore = Utils.messageAndResponseInt("Enter the away team score: ");
+        int homeScore = Utils.messageAndResponseInt("Enter the home team score: ");
+
+        league.updateRecordBasedOnGame(awayTeam, homeTeam, awayScore, homeScore);
     }
 
     //

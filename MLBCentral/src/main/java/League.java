@@ -226,5 +226,8 @@ public class League {
         Utils.pauseApp();
     }
 
-    //Gets all teams who are going to make the playoffs
+    //Takes a score from a game and adds loss to loser record and win to winner record
+    public void updateRecordBasedOnGame(String awayTeam, String homeTeam, int awayScore, int homeScore) {
+
+    }
 }
