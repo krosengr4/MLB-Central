@@ -229,5 +229,40 @@ public class League {
     //Takes a score from a game and adds loss to loser record and win to winner record
     public void updateRecordBasedOnGame(String awayTeam, String homeTeam, int awayScore, int homeScore) {
 
+        teams = getAllTeams();
+        boolean isAwayTeamFound = false;
+        boolean isHomeTeamFound = false;
+
+        if (awayScore > homeScore) {
+            for (Team t : teams) {
+                if (t.getName().equalsIgnoreCase(awayTeam)) {
+                    t.setWins(t.wins + 1);
+                    isAwayTeamFound = true;
+                    System.out.printf("With this win, the %s record is now %d - %d\n", t.getName(), t.getWins(), t.getLosses());
+                } else if (t.getName().equalsIgnoreCase(homeTeam)) {
+                    t.setLosses(t.losses + 1);
+                    isHomeTeamFound = true;
+                    System.out.printf("With this loss, the %s record is now %d - %d\n", t.getName(), t.getWins(), t.getLosses());
+                }
+            }
+        } else if (awayScore < homeScore) {
+            for (Team t : teams) {
+                if (t.getName().equalsIgnoreCase(awayTeam)) {
+                    t.setLosses(t.losses + 1);
+                    isAwayTeamFound = true;
+                    System.out.printf("With this loss, the %s record is now %d - %d\n", t.getName(), t.getWins(), t.getLosses());
+                } else if (t.getName().equalsIgnoreCase(homeTeam)) {
+                    t.setWins(t.wins + 1);
+                    isHomeTeamFound = true;
+                    System.out.printf("With this win, the %s record is now %d - %d\n", t.getName(), t.getWins(), t.getLosses());
+                }
+            }
+        }
+
+        if(!isAwayTeamFound || !isHomeTeamFound) {
+            System.err.println("Could not find one or both of the teams...");
+        } else {
+            MLBFileManager.prepareWriteToFile(teams);
+        }
     }
 }
