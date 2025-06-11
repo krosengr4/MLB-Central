@@ -198,7 +198,7 @@ public class UserInterface {
         league.updateRecordBasedOnGame(awayTeam, homeTeam, awayScore, homeScore);
     }
 
-    //
+    //Method to create new instance Playoff object
     private void processViewPlayoffPicture() {
         System.out.println("These Teams will Make the playoffs: ");
     }
